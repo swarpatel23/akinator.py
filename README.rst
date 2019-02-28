@@ -50,29 +50,25 @@ Here's a quick little example of the library being used to make a simple, text-b
 .. code-block:: python
 
   import akinator
-
   aki = akinator.Akinator()
 
   def main():
       q = aki.start_game()
-      while True:
-          while aki.progression <= 85:
-              a = input(q + "\n\t")
-              if a == "b":
-                  try:
-                      q = aki.back()
-                  except akinator.CantGoBackAnyFurther:
-                      pass
-              else:
-                  q = aki.answer(a)
-          win = aki.win()
-          correct = input(f"It's {aki.name} ({aki.description})! Was I correct?\n{aki.picture}\n\t")
-          if correct.lower() == "yes" or correct.lower() == "y":
-              print("Yay\n")
-              break
+      while aki.progression <= 85:
+          a = input(q + "\n\t")
+          if a == "b":
+              try:
+                  q = aki.back()
+              except akinator.CantGoBackAnyFurther:
+                  pass
           else:
-              print("Oof\n")
-              break
+              q = aki.answer(a)
+      win = aki.win()
+      correct = input(f"It's {aki.name} ({aki.description})! Was I correct?\n{aki.picture}\n\t")
+      if correct.lower() == "yes" or correct.lower() == "y":
+          print("Yay\n")
+      else:
+          print("Oof\n")
 
   main()
 
@@ -89,24 +85,21 @@ Here's the same game as above, but using the async version of the library instea
 
   async def main():
       q = await aki.start_game()
-      while True:
-          while aki.progression <= 85:
-              a = input(q + "\n\t")
-              if a == "b":
-                  try:
-                      q = await aki.back()
-                  except akinator.CantGoBackAnyFurther:
-                      pass
-              else:
-                  q = await aki.answer(a)
-          win = await aki.win()
-          correct = input(f"It's {aki.name} ({aki.description})! Was I correct?\n{aki.picture}\n\t")
-          if correct.lower() == "yes" or correct.lower() == "y":
-              print("Yay\n")
-              break
+      while aki.progression <= 85:
+          a = input(q + "\n\t")
+          if a == "b":
+              try:
+                  q = await aki.back()
+              except akinator.CantGoBackAnyFurther:
+                  pass
           else:
-              print("Oof\n")
-              break
+              q = await aki.answer(a)
+      win = await aki.win()
+      correct = input(f"It's {aki.name} ({aki.description})! Was I correct?\n{aki.picture}\n\t")
+      if correct.lower() == "yes" or correct.lower() == "y":
+          print("Yay\n")
+      else:
+          print("Oof\n")
 
   loop.run_until_complete(main())
   loop.close()
