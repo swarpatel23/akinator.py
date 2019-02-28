@@ -124,13 +124,15 @@ Sample placeholder text
 Functions
 ---------
 
-**Akinator.start_game(language=None)**
+Akinator.start_game(language=None)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    More placeholder text
+More placeholder text
 
-**Akinator.answer(ans)**
+Akinator.answer(ans)
+^^^^^^^^^^^^^^^^^^^^
 
-    Even more sample text stuff
+Even more sample text stuff
 
 Variables
 ---------
