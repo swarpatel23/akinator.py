@@ -21,8 +21,9 @@ Licensed under the MIT License (see ``LICENSE.txt`` for details).
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+**********
 Installing
-==========
+**********
 
 To install the regular library without async support, just run the following command:
 
@@ -42,8 +43,9 @@ To get async support plus faster performance (via the ``aiodns`` and ``cchardet`
 
   python3 -m pip install -U akinator.py[fast_async]
 
+**************
 Quick Examples
-==============
+**************
 
 Here's a quick little example of the library being used to make a simple, text-based Akinator game:
 
@@ -104,34 +106,34 @@ Here's the same game as above, but using the async version of the library instea
   loop.run_until_complete(main())
   loop.close()
 
+*************
 Documentation
-=============
+*************
 
 Because this library is relatively simple and only has a few functions to keep track of, all the documentation is gonna go here in the README, instead of on a separate site like `readthedocs.io <https://readthedocs.org/>`_ or something.
 
 The async version of this library works almost exactly the same as the regular, non-async one. Both have the same classes, names of functions, etc. Any differences will be noted.
 
-To use the regular version of akinator.py, type ``import akinator`` at the top of your program. To use the one with async support, type ``import akinator.async_aki`` OR ``from akinator.async_aki import Akinator``
-
+To use the regular version of akinator.py, type ``import akinator`` at the top of your program. To use the one with async support, type ``import akinator.async_aki`` OR ``from akinator.async_aki import Akinator``.
 
 *class* Akinator()
-------------------
+==================
 
 Sample placeholder text
 
-**Functions**
-^^^^^^^^^^^^^
+Functions
+---------
 
 **Akinator.start_game(language=None)**
 
-More placeholder text
+    More placeholder text
 
 **Akinator.answer(ans)**
 
-Even more sample text stuff
+    Even more sample text stuff
 
-**Variables**
-^^^^^^^^^^^^^
+Variables
+---------
 
 Akinator.server
   Even more random placeholder text
