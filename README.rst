@@ -19,7 +19,7 @@ Licensed under the MIT License (see ``LICENSE.txt`` for details).
 
 `Akinator.com <https://www.akinator.com>`_ is an online game where you think of a character, real or fiction, and by asking you questions the site will try to guess who you're thinking of. This library allows for easy access to the Akinator API and makes writing programs that use it much simpler.
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 **********
 Installing
@@ -110,33 +110,101 @@ Here's the same game as above, but using the async version of the library instea
 Documentation
 *************
 
-Because this library is relatively simple and only has a few functions to keep track of, all the documentation is gonna go here in the README, instead of on a separate site like `readthedocs.io <https://readthedocs.org/>`_ or something.
+Because this library is relatively simple and only has a few functions to keep track of, all the documentation is going to go here in the README, instead of on a separate site like `readthedocs.io <https://readthedocs.org/>`_ or something.
 
 The async version of this library works almost exactly the same as the regular, non-async one. Both have the same classes, names of functions, etc. Any differences will be noted.
 
-To use the regular version of akinator.py, type ``import akinator`` at the top of your program. To use the one with async support, type ``import akinator.async_aki`` OR ``from akinator.async_aki import Akinator``.
+To use the regular version of akinator.py, type ``import akinator`` at the top of your program. To use the one with async support, type ``import akinator.async_aki`` or ``from akinator.async_aki import Akinator``.
 
 *class* Akinator()
 ==================
 
-Sample placeholder text
+A class that represents an Akinator game.
+
+The first thing you want to do after calling an instance of this class is to call ``Akinator.start_game()``.
+
+In the aysnc version, this class also has an optional parameter called ``loop``, which can be either left as None or assigned to an asyncio event loop.
 
 Functions
 =========
 
+**Note**: In the async version, all the below functions are coroutines and must be awaited 
+
 Akinator.start_game(language=None)
-  More placeholder text
+  Start an Akinator game. Run this function first before the others. Returns a string containing the first question
+
+  The ``language`` parameter can be left as None for English, the default language, or it can be set to one of these:
+    - ``en``: English
+    - ``en2``: Second English server. Use if the main one is down
+    - ``ar``: Arabic
+    - ``cn``: Chinese
+    - ``de``: German
+    - ``es``: Spanish
+    - ``fr``: French
+    - ``fr2``: Second French server. Use if the main one is down
+    - ``il``: Hebrew
+    - ``it``: Italian
+    - ``jp``: Japanese
+    - ``kr``: Korean
+    - ``nl``: Dutch
+    - ``pl``: Polish
+    - ``pt``: Portuguese
+    - ``ru``: Russian
+    - ``tr``: Turkish
+
+  You can also put the name of the language spelled out, like ``spanish``, ``korean``, etc.
 
 Akinator.answer(ans)
-  Even more sample text stuff
+  Answer the current question, which you can find with ``Akinator.question``. Returns a string containing the next question
+
+  The ``ans`` parameter must be one of these:
+    - `yes` or ``y`` or ``0`` for YES
+    - ``no`` or ``n`` or ``1`` for NO
+    - ``i`` or ``idk`` or ``i dont know`` or ``i don't know`` or ``2`` for I DON'T KNOW
+    - ``probably`` or ``p`` or ``3`` for PROBABLY
+    - ``probably not`` or ``pn`` or ``4`` for PROBABLY NOT
+
+Akinator.back()
+  Goes back to the previous question. Returns a string containing that question
+
+  If you're on the first question and you try to go back again, the CantGoBackAnyFurther exception will be raised
+
+Akinator.win()
+  Get Aki's first guess for who the person you're thinking of is based on your answers to the questions.
+
+  This function defines 3 new variables:
+    - ``Akinator.name``: The name of the person Aki guessed
+    - ``Akinator.description``: A short description of that person
+    - ``Akinator.picture``: A direct link to an image of the person
+
+  This function will also return a dictionary containing the above values plus some additional ones.
+
+  It's recommended that you call this function when Aki's progression is above 85%. You can get his current progression via ``Akinator.progression``
 
 Variables
 =========
 
-More sample placeholder text
+These variables contain important information about the Akinator game
 
 Akinator.server
-  Even more random placeholder text
+  The server this Akinator game is using. Depends on what you put for the language param in ``Akinator.start_game()``
 
 Akinator.session
   Lorem ipsum something
+
+Akinator.signature
+  Lorem ipsum something
+
+Akinator.question
+  Lorem ipsum something
+
+Akinator.progression
+  Lorem ipsum something
+
+Akinator.step
+  Lorem ipsum something
+
+Exceptions
+==========
+
+WIP
