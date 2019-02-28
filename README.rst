@@ -48,6 +48,7 @@ Quick Examples
 Here's a quick little example of the library being used to make a simple, text-based Akinator game:
 
 .. code-block:: python
+  :linenos:
 
   import akinator
 
@@ -81,6 +82,7 @@ Here's a quick little example of the library being used to make a simple, text-b
 Here's the same game as above, but using the async version of the library instead:
 
 .. code-block:: python
+  :linenos:
 
   from akinator.async_aki import Akinator
   import akinator
