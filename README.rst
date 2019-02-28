@@ -8,8 +8,10 @@ akinator.py
 .. image:: https://img.shields.io/badge/pypi-v1.0.0-blue.svg
     :target: https://pypi.python.org/pypi/akinator.py/
 
-.. image:: https://img.shields.io/badge/python-3.5\ |\ 3.6-yellow.svg
+.. image:: https://img.shields.io/badge/python-3.5%20%7C%203.6-yellow.svg
     :target: https://pypi.python.org/pypi/akinator.py/
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 Copyright (c) 2019 NinjaSnail1080
 
