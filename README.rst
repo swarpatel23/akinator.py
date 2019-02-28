@@ -119,8 +119,8 @@ To use the regular version of akinator.py, type ``import akinator`` at the top o
 
 Sample placeholder text
 
-Functions
-^^^^^^^^^
+**Functions**
+^^^^^^^^^^^^^
 
 **Akinator.start_game(language=None)**
 
@@ -130,8 +130,8 @@ More placeholder text
 
 Even more sample text stuff
 
-Variables
-^^^^^^^^^
+**Variables**
+^^^^^^^^^^^^^
 
 Akinator.server
   Even more random placeholder text
