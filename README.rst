@@ -48,12 +48,10 @@ Quick Examples
 Here's a quick little example of the library being used to make a simple, text-based Akinator game:
 
 .. code-block:: python
-  :linenos:
 
   import akinator
 
   aki = akinator.Akinator()
-
 
   def main():
       q = aki.start_game()
@@ -76,13 +74,11 @@ Here's a quick little example of the library being used to make a simple, text-b
               print("Oof\n")
               break
 
-
   main()
 
 Here's the same game as above, but using the async version of the library instead:
 
 .. code-block:: python
-  :linenos:
 
   from akinator.async_aki import Akinator
   import akinator
@@ -90,7 +86,6 @@ Here's the same game as above, but using the async version of the library instea
 
   loop = asyncio.get_event_loop()
   aki = Akinator(loop)
-
 
   async def main():
       q = await aki.start_game()
@@ -112,7 +107,6 @@ Here's the same game as above, but using the async version of the library instea
           else:
               print("Oof\n")
               break
-
 
   loop.run_until_complete(main())
   loop.close()
