@@ -134,23 +134,24 @@ Akinator.start_game(language=None)
   Start an Akinator game. Run this function first before the others. Returns a string containing the first question
 
   The ``language`` parameter can be left as None for English, the default language, or it can be set to one of these:
-    - ``en``: English
-    - ``en2``: Second English server. Use if the main one is down
-    - ``ar``: Arabic
-    - ``cn``: Chinese
-    - ``de``: German
-    - ``es``: Spanish
-    - ``fr``: French
-    - ``fr2``: Second French server. Use if the main one is down
-    - ``il``: Hebrew
-    - ``it``: Italian
-    - ``jp``: Japanese
-    - ``kr``: Korean
-    - ``nl``: Dutch
-    - ``pl``: Polish
-    - ``pt``: Portuguese
-    - ``ru``: Russian
-    - ``tr``: Turkish
+
+  - ``en``: English
+  - ``en2``: Second English server. Use if the main one is down
+  - ``ar``: Arabic
+  - ``cn``: Chinese
+  - ``de``: German
+  - ``es``: Spanish
+  - ``fr``: French
+  - ``fr2``: Second French server. Use if the main one is down
+  - ``il``: Hebrew
+  - ``it``: Italian
+  - ``jp``: Japanese
+  - ``kr``: Korean
+  - ``nl``: Dutch
+  - ``pl``: Polish
+  - ``pt``: Portuguese
+  - ``ru``: Russian
+  - ``tr``: Turkish
 
   You can also put the name of the language spelled out, like ``spanish``, ``korean``, etc.
 
@@ -158,11 +159,12 @@ Akinator.answer(ans)
   Answer the current question, which you can find with ``Akinator.question``. Returns a string containing the next question
 
   The ``ans`` parameter must be one of these:
-    - `yes` or ``y`` or ``0`` for YES
-    - ``no`` or ``n`` or ``1`` for NO
-    - ``i`` or ``idk`` or ``i dont know`` or ``i don't know`` or ``2`` for I DON'T KNOW
-    - ``probably`` or ``p`` or ``3`` for PROBABLY
-    - ``probably not`` or ``pn`` or ``4`` for PROBABLY NOT
+
+  - `yes` or ``y`` or ``0`` for YES
+  - ``no`` or ``n`` or ``1`` for NO
+  - ``i`` or ``idk`` or ``i dont know`` or ``i don't know`` or ``2`` for I DON'T KNOW
+  - ``probably`` or ``p`` or ``3`` for PROBABLY
+  - ``probably not`` or ``pn`` or ``4`` for PROBABLY NOT
 
 Akinator.back()
   Goes back to the previous question. Returns a string containing that question
@@ -173,9 +175,10 @@ Akinator.win()
   Get Aki's first guess for who the person you're thinking of is based on your answers to the questions.
 
   This function defines 3 new variables:
-    - ``Akinator.name``: The name of the person Aki guessed
-    - ``Akinator.description``: A short description of that person
-    - ``Akinator.picture``: A direct link to an image of the person
+  
+  - ``Akinator.name``: The name of the person Aki guessed
+  - ``Akinator.description``: A short description of that person
+  - ``Akinator.picture``: A direct link to an image of the person
 
   This function will also return a dictionary containing the above values plus some additional ones.
 
