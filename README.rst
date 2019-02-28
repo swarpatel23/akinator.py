@@ -25,16 +25,19 @@ Installing
 To install the regular library without async support, just run the following command:
 
 .. code-block:: python
+
   python3 -m pip install -U akinator.py
 
 Otherwise, to get asynchronous support, do:
 
 .. code-block:: python
+
   python3 -m pip install -U akinator.py[async]
 
 To get async support plus better performance (via the ``aiodns`` and ``cchardet`` libraries), do:
 
 .. code-block:: python
+
   python3 -m pip install -U akinator.py[fast_async]
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
