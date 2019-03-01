@@ -203,7 +203,7 @@ Akinator.win()
 Variables
 =========
 
-These variables contain important information about the Akinator game
+These variables contain important information about the Akinator game. Please don't change any of these values in your program. It'll definitely mess things up.
 
 Akinator.server
   The server this Akinator game is using. Depends on what you put for the language param in ``Akinator.start_game()`` (e.g., ``"srv11.akinator.com:9152"``, ``"srv11.akinator.com:9150"``, etc.)
@@ -218,10 +218,10 @@ Akinator.question
   The current question that Akinator is asking the user. Examples of questions asked by Aki include: ``Is your character's gender female?``, ``Is your character more than 40 years old?``, ``Does your character create music?``, ``Is your character real?``, ``Is your character from a TV series?``, etc.
 
 Akinator.progression
-  A number that represents a percentage showing how close Aki thinks he is to guessing your character.
+  A floating point number that represents a percentage showing how close Aki thinks he is to guessing your character. I recommend keeping track of this value and calling ``Akinator.win()`` when it's above 85. In most cases, this is about when Aki will have it narrowed down to one choice, which will hopefully be the correct one.
 
 Akinator.step
-  Lorem ipsum something
+  An integer that tells you what question Akinator is on. This will be 0 on the first question, 1 on the second question, 2 on the third, 3 on the fourth, etc.
 
 Exceptions
 ==========
