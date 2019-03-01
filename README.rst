@@ -182,7 +182,7 @@ Akinator.win()
 
   This function will also return a dictionary containing the above values plus some additional ones. Here's an example of what the dict looks like:
 
-  .. code-block:: json
+  .. code-block:: javascript
 
     {'absolute_picture_path': 'https://photos.clarinea.fr/BL_25_en/600/partenaire/q/2367495__1923001285.jpg',
      'description': 'Entrepreneur',
