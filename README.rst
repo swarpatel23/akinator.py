@@ -175,12 +175,28 @@ Akinator.win()
   Get Aki's first guess for who the person you're thinking of is based on your answers to the questions.
 
   This function defines 3 new variables:
-  
+
   - ``Akinator.name``: The name of the person Aki guessed
   - ``Akinator.description``: A short description of that person
   - ``Akinator.picture``: A direct link to an image of the person
 
-  This function will also return a dictionary containing the above values plus some additional ones.
+  This function will also return a dictionary containing the above values plus some additional ones. Here's an example of what the dict looks like:
+
+  .. code-block:: json
+
+    {'absolute_picture_path': 'https://photos.clarinea.fr/BL_25_en/600/partenaire/q/2367495__1923001285.jpg',
+     'description': 'Entrepreneur',
+     'flag_photo': 0,
+     'id': '28146',
+     'id_base': '2367495',
+     'minibase_addable': '0',
+     'name': 'Elon Musk',
+     'picture_path': 'partenaire/q/2367495__1923001285.jpg',
+     'proba': '0.937118',
+     'pseudo': 'Rob',
+     'ranking': '390',
+     'relative_id': '-1',
+     'valide_contrainte': '1'}
 
   It's recommended that you call this function when Aki's progression is above 85%. You can get his current progression via ``Akinator.progression``
 
@@ -190,19 +206,19 @@ Variables
 These variables contain important information about the Akinator game
 
 Akinator.server
-  The server this Akinator game is using. Depends on what you put for the language param in ``Akinator.start_game()``
+  The server this Akinator game is using. Depends on what you put for the language param in ``Akinator.start_game()`` (e.g., ``"srv11.akinator.com:9152"``, ``"srv11.akinator.com:9150"``, etc.)
 
 Akinator.session
-  Lorem ipsum something
+  A number, usually in between 0 and 100, that represents the game's session.
 
 Akinator.signature
-  Lorem ipsum something
+  A usually 9 or 10 digit number that represents the game's signature
 
 Akinator.question
-  Lorem ipsum something
+  The current question that Akinator is asking the user. Examples of questions asked by Aki include: ``Is your character's gender female?``, ``Is your character more than 40 years old?``, ``Does your character create music?``, ``Is your character real?``, ``Is your character from a TV series?``, etc.
 
 Akinator.progression
-  Lorem ipsum something
+  A number that represents a percentage showing how close Aki thinks he is to guessing your character.
 
 Akinator.step
   Lorem ipsum something
