@@ -25,21 +25,15 @@ Licensed under the MIT License (see ``LICENSE.txt`` for details).
 Installing
 **********
 
-To install the regular library without async support, just run the following command:
-
-.. code-block:: none
+To install the regular library without async support, just run the following command::
 
   python3 -m pip install -U akinator.py
 
-Otherwise, to get asynchronous support, do:
-
-.. code-block:: none
+Otherwise, to get asynchronous support, do::
 
   python3 -m pip install -U akinator.py[async]
 
-To get async support plus faster performance (via the ``aiodns`` and ``cchardet`` libraries), do:
-
-.. code-block:: none
+To get async support plus faster performance (via the ``aiodns`` and ``cchardet`` libraries), do::
 
   python3 -m pip install -U akinator.py[fast_async]
 
