@@ -13,7 +13,7 @@ akinator.py
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-Copyright (c) 2019 NinjaSnail1080
+Copyright © 2019 NinjaSnail1080
 
 Licensed under the MIT License (see ``LICENSE.txt`` for details).
 
