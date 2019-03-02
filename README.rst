@@ -128,7 +128,7 @@ In the aysnc version, this class also has an optional parameter called ``loop``,
 Functions
 =========
 
-**Note**: In the async version, all the below functions are coroutines and must be awaited 
+**Note**: In the async version, all the below functions are coroutines and must be awaited
 
 Akinator.start_game(language=None)
   Start an Akinator game. Run this function first before the others. Returns a string containing the first question
@@ -209,7 +209,7 @@ Akinator.server
   The server this Akinator game is using. Depends on what you put for the language param in ``Akinator.start_game()`` (e.g., ``"srv11.akinator.com:9152"``, ``"srv11.akinator.com:9150"``, etc.)
 
 Akinator.session
-  A number, usually in between 0 and 100, that represents the game's session.
+  A number, usually in between 0 and 100, that represents the game's session
 
 Akinator.signature
   A usually 9 or 10 digit number that represents the game's signature
@@ -226,4 +226,22 @@ Akinator.step
 Exceptions
 ==========
 
-WIP
+Exceptions that are thrown by the library
+
+akinator.InvalidAnswerError
+  Raised when the user inputs an invalid answer
+
+akinator.InvalidLanguageError
+  Raised when the user inputs an invalid language
+
+akinator.AkiConnectionFailure
+  Raised if the Akinator API fails to connect for some reason. Base class for ``AkiTimedOut`` and ``AkiFailedToConnect``
+
+akinator.AkiTimedOut
+  Raised if the Akinator session times out. Derived from ``AkiConnectionFailure``
+
+akinator.AkiFailedToConnect
+  Raised when the Akinator API failed to connect some reason other than timing out. Derived from ``AkiConnectionFailure``
+
+akinator.CantGoBackAnyFurther:
+  Raised when the user is on the first question and tries to go back further
