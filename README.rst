@@ -114,8 +114,6 @@ Because this library is relatively simple and only has a few functions to keep t
 
 The async version of this library works almost exactly the same as the regular, non-async one. Both have the same classes, names of functions, etc. Any differences will be noted.
 
-To use the regular version of akinator.py, type ``import akinator`` at the top of your program. To use the one with async support, type ``import akinator.async_aki`` or ``from akinator.async_aki import Akinator``.
-
 *class* Akinator()
 ==================
 
@@ -124,6 +122,8 @@ A class that represents an Akinator game.
 The first thing you want to do after calling an instance of this class is to call ``Akinator.start_game()``.
 
 In the aysnc version, this class also has an optional parameter called ``loop``, which can be either left as None or assigned to an asyncio event loop.
+
+To get the regular Akinator class, make sure you've put ``import akinator`` at the top of your code. From there you can easily access the class via ``aki = akinator.Akinator()``. To get the async version of the class, make sure you have ``import akinator.async_aki`` or ``from akinator.async_aki import Akinator`` in your code and you'll be able to get the async Akinator class just as easily (Refer to the code examples above).
 
 Functions
 =========
