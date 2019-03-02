@@ -263,11 +263,11 @@ akinator.CantGoBackAnyFurther:
 
 """""""""""""""""
 
-.. image:: https://img.shields.io/badge/Enjoy%20this%20library%3F-Say%20Thanks!-yellow.svg
+.. image:: https://img.shields.io/badge/Enjoy%20this%20library%3F-Say%20Thanks!-brightgreen.svg
     :target: https://saythanks.io/to/NinjaSnail1080
 
 .. image:: https://img.shields.io/badge/Having%20problems%3F-Issues%20Tracker-blueviolet.svg
-    :target: https://saythanks.io/to/NinjaSnail1080
+    :target: https://github.com/NinjaSnail1080/akinator.py/issues
 
-.. image:: https://img.shields.io/badge/License-MIT-brightgreen.svg
+.. image:: https://img.shields.io/badge/License-MIT-important.svg
     :target: https://saythanks.io/to/NinjaSnail1080
