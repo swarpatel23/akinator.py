@@ -238,7 +238,7 @@ Akinator.progression
 Akinator.step
   An integer that tells you what question Akinator is on. This will be 0 on the first question, 1 on the second question, 2 on the third, 3 on the fourth, etc.
 
-The first 3 variables, `server`, `session`, and `signature` will remain unchanged, but the next 3, `question`, `progression`, and `step` will change as you go on.
+The first 3 variables, ``server``, ``session``, and ``signature`` will remain unchanged, but the next 3, ``question``, ``progression``, and ``step`` will change as you go on.
 
 Exceptions
 ==========
