@@ -269,5 +269,5 @@ akinator.CantGoBackAnyFurther:
 .. image:: https://img.shields.io/badge/Having%20problems%3F-Issues%20Tracker-blueviolet.svg
     :target: https://github.com/NinjaSnail1080/akinator.py/issues
 
-.. image:: https://img.shields.io/badge/License-MIT-orange.svg
+.. image:: https://img.shields.io/badge/License-MIT-red.svg
     :target: https://opensource.org/licenses/MIT
