@@ -9,7 +9,7 @@ akinator.py
     :target: https://pypi.python.org/pypi/akinator.py/
 
 .. image:: https://img.shields.io/badge/python-3.5%20%7C%203.6-yellow.svg
-    :target: https://pypi.python.org/pypi/akinator.py/
+    :target: https://www.python.org/downloads/
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -42,6 +42,17 @@ To get async support plus faster performance (via the ``aiodns`` and ``cchardet`
 .. code-block:: none
 
   python3 -m pip install -U akinator.py[fast_async]
+
+Requirements
+============
+
+- ``requests``
+
+- ``aiohttp`` (For async)
+
+- ``aiodns`` and ``cchardet`` (For faster performance with async)
+
+Usually ``pip`` will handle these for you.
 
 **************
 Quick Examples
@@ -155,6 +166,8 @@ Akinator.start_game(language=None)
 
   You can also put the name of the language spelled out, like ``spanish``, ``korean``, etc.
 
+  If you put something else entirely, then then the ``InvalidLanguageError`` exception will be raised
+
 Akinator.answer(ans)
   Answer the current question, which you can find with ``Akinator.question``. Returns a string containing the next question
 
@@ -166,19 +179,21 @@ Akinator.answer(ans)
   - ``probably`` or ``p`` or ``3`` for PROBABLY
   - ``probably not`` or ``pn`` or ``4`` for PROBABLY NOT
 
+  If it's something else, then the ``InvalidAnswerError`` exception will be raised
+
 Akinator.back()
   Goes back to the previous question. Returns a string containing that question
 
   If you're on the first question and you try to go back again, the CantGoBackAnyFurther exception will be raised
 
 Akinator.win()
-  Get Aki's first guess for who the person you're thinking of is based on your answers to the questions so far.
+  Get Aki's first guess for who the character you're thinking of is based on your answers to the questions so far.
 
   This function defines 3 new variables:
 
-  - ``Akinator.name``: The name of the person Aki guessed
-  - ``Akinator.description``: A short description of that person
-  - ``Akinator.picture``: A direct link to an image of the person
+  - ``Akinator.name``: The name of the character Aki guessed
+  - ``Akinator.description``: A short description of that character
+  - ``Akinator.picture``: A direct link to an image of the character
 
   This function will also return a dictionary containing the above values plus some additional ones. Here's an example of what the dict looks like:
 
@@ -203,7 +218,7 @@ Akinator.win()
 Variables
 =========
 
-These variables contain important information about the Akinator game. Please don't change any of these values in your program. It'll definitely mess things up.
+These variables contain important information about the Akinator game. Please don't change any of these values in your program. It'll definitely break things.
 
 Akinator.server
   The server this Akinator game is using. Depends on what you put for the language param in ``Akinator.start_game()`` (e.g., ``"srv11.akinator.com:9152"``, ``"srv11.akinator.com:9150"``, etc.)
@@ -245,3 +260,14 @@ akinator.AkiFailedToConnect
 
 akinator.CantGoBackAnyFurther:
   Raised when the user is on the first question and tries to go back further by calling ``Akinator.back()``
+
+"""""""""""""""""
+
+.. image:: https://img.shields.io/badge/Enjoy%20this%20library%3F-Say%20Thanks!-yellow.svg
+    :target: https://saythanks.io/to/NinjaSnail1080
+
+.. image:: https://img.shields.io/badge/Having%20problems%3F-Issues%20Tracker-blueviolet.svg
+    :target: https://saythanks.io/to/NinjaSnail1080
+
+.. image:: https://img.shields.io/badge/License-MIT-brightgreen.svg
+    :target: https://saythanks.io/to/NinjaSnail1080
