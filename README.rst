@@ -48,9 +48,9 @@ Requirements
 
 - ``requests``
 
-- ``aiohttp`` (For async)
+- ``aiohttp`` (Optional, for async)
 
-- ``aiodns`` and ``cchardet`` (For faster performance with async)
+- ``aiodns`` and ``cchardet`` (Optional, for faster performance with async)
 
 Usually ``pip`` will handle these for you.
 
