@@ -172,7 +172,7 @@ Akinator.back()
   If you're on the first question and you try to go back again, the CantGoBackAnyFurther exception will be raised
 
 Akinator.win()
-  Get Aki's first guess for who the person you're thinking of is based on your answers to the questions.
+  Get Aki's first guess for who the person you're thinking of is based on your answers to the questions so far.
 
   This function defines 3 new variables:
 
@@ -229,10 +229,10 @@ Exceptions
 Exceptions that are thrown by the library
 
 akinator.InvalidAnswerError
-  Raised when the user inputs an invalid answer
+  Raised when the user inputs an invalid answer into ``Akinator.answer(ans)``
 
 akinator.InvalidLanguageError
-  Raised when the user inputs an invalid language
+  Raised when the user inputs an invalid language into ``Akinator.start_game(language=None)``
 
 akinator.AkiConnectionFailure
   Raised if the Akinator API fails to connect for some reason. Base class for ``AkiTimedOut`` and ``AkiFailedToConnect``
@@ -244,4 +244,4 @@ akinator.AkiFailedToConnect
   Raised when the Akinator API failed to connect some reason other than timing out. Derived from ``AkiConnectionFailure``
 
 akinator.CantGoBackAnyFurther:
-  Raised when the user is on the first question and tries to go back further
+  Raised when the user is on the first question and tries to go back further by calling ``Akinator.back()``
