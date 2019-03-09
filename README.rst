@@ -5,7 +5,7 @@ akinator.py
 
 **An API wrapper for the online game, Akinator, written in Python**
 
-.. image:: https://img.shields.io/badge/pypi-v1.0.0-blue.svg
+.. image:: https://img.shields.io/badge/pypi-v1.0.3-blue.svg
     :target: https://pypi.python.org/pypi/akinator.py/
 
 .. image:: https://img.shields.io/badge/python-3.5%20%7C%203.6-yellow.svg
@@ -57,6 +57,7 @@ Here's a quick little example of the library being used to make a simple, text-b
 .. code-block:: python
 
   import akinator
+
   aki = akinator.Akinator()
 
   def main():
@@ -70,7 +71,7 @@ Here's a quick little example of the library being used to make a simple, text-b
                   pass
           else:
               q = aki.answer(a)
-      win = aki.win()
+      aki.win()
       correct = input(f"It's {aki.name} ({aki.description})! Was I correct?\n{aki.picture}\n\t")
       if correct.lower() == "yes" or correct.lower() == "y":
           print("Yay\n")
@@ -87,8 +88,7 @@ Here's the same game as above, but using the async version of the library instea
   import akinator
   import asyncio
 
-  loop = asyncio.get_event_loop()
-  aki = Akinator(loop)
+  aki = Akinator()
 
   async def main():
       q = await aki.start_game()
@@ -101,13 +101,14 @@ Here's the same game as above, but using the async version of the library instea
                   pass
           else:
               q = await aki.answer(a)
-      win = await aki.win()
+      await aki.win()
       correct = input(f"It's {aki.name} ({aki.description})! Was I correct?\n{aki.picture}\n\t")
       if correct.lower() == "yes" or correct.lower() == "y":
           print("Yay\n")
       else:
           print("Oof\n")
 
+  loop = asyncio.get_event_loop()
   loop.run_until_complete(main())
   loop.close()
 
@@ -119,14 +120,19 @@ Because this library is relatively simple and only has a few functions to keep t
 
 The async version of this library works almost exactly the same as the regular, non-async one. Both have the same classes, names of functions, etc. Any differences will be noted.
 
+**Version Information**::
+
+  >>> import akinator
+  >>> akinator.__version__
+
+Alternatively, you can view the ``VERSION.txt`` file
+
 *class* Akinator()
 ==================
 
 A class that represents an Akinator game.
 
 The first thing you want to do after calling an instance of this class is to call ``Akinator.start_game()``.
-
-In the aysnc version, this class also has an optional parameter called ``loop``, which can be either left as None or assigned to an asyncio event loop.
 
 To get the regular Akinator class, make sure you've put ``import akinator`` at the top of your code. From there you can easily access the class via ``aki = akinator.Akinator()``. To get the async version of the class, make sure you have ``import akinator.async_aki`` or ``from akinator.async_aki import Akinator`` in your code and you'll be able to get the async Akinator class just as easily (Refer to the code examples above).
 
@@ -167,7 +173,7 @@ Akinator.answer(ans)
 
   The ``ans`` parameter must be one of these:
 
-  - `yes` or ``y`` or ``0`` for YES
+  - ``yes`` or ``y`` or ``0`` for YES
   - ``no`` or ``n`` or ``1`` for NO
   - ``i`` or ``idk`` or ``i dont know`` or ``i don't know`` or ``2`` for I DON'T KNOW
   - ``probably`` or ``p`` or ``3`` for PROBABLY
@@ -246,13 +252,16 @@ akinator.InvalidLanguageError
   Raised when the user inputs an invalid language into ``Akinator.start_game(language=None)``
 
 akinator.AkiConnectionFailure
-  Raised if the Akinator API fails to connect for some reason. Base class for ``AkiTimedOut`` and ``AkiFailedToConnect``
+  Raised if the Akinator API fails to connect for some reason. Base class for ``AkiTimedOut``, ``AkiNoQuestions``, and ``AkiFailedToConnect``
 
 akinator.AkiTimedOut
   Raised if the Akinator session times out. Derived from ``AkiConnectionFailure``
 
+akinator.AkiNoQuestions
+  Raised if the Akinator API runs out of questions to ask. This will happen once ``Akinator.step`` reaches 80. Derived from ``AkiConnectionFailure``
+
 akinator.AkiFailedToConnect
-  Raised when the Akinator API failed to connect some reason other than timing out. Derived from ``AkiConnectionFailure``
+  Raised when the Akinator API failed to connect some reason other than timing out or running out of questions. Derived from ``AkiConnectionFailure``
 
 akinator.CantGoBackAnyFurther:
   Raised when the user is on the first question and tries to go back further by calling ``Akinator.back()``
